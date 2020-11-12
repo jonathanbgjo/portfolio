@@ -9771,7 +9771,7 @@ button.bg-dark:focus {
 }
 
 .text-white {
-  color: #fff !important;
+  color: #f1faee !important;
 }
 
 .text-primary {
@@ -10186,5 +10186,8 @@ header.masthead h1 {
   height:100px;
 } */
 a{
-  color: #a8dadc
+  color: #1d3557
+}
+.contact{
+  color:#1d3557
 }

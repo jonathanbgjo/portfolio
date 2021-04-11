@@ -1,2 +1,13 @@
 # jonathanbgjo.github.io
-Portfolio
+Portfolio using JavaScript/HTML/CSS
+
+
+
+
+
+
+
+
+
+
+

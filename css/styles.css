@@ -89,12 +89,27 @@ h3 { font-size: var(--h3); line-height: 1.25; font-weight: 700; margin: 0 0 var(
 
 /* ---- Navbar ---- */
 /* Nav: absolute + transparent */
+/* Base navbar look */
 #mainNav {
-  position: absolute;
+  transition: all 0.3s ease-in-out;
+  background-color: rgba(15, 23, 42, 0.95); /* navy with transparency */
+  backdrop-filter: blur(8px); /* subtle glass effect */
+}
+
+/* Add shadow when scrolling */
+#mainNav.scrolled {
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+html {
+  scroll-behavior: smooth;
+}
+
+#mainNav {
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background: transparent;   /* no blocking */
+  background:transparent;   /* no blocking */
   padding: 1rem 2rem;
   z-index: 1000;             /* above content */
 }
@@ -174,6 +189,11 @@ h3 { font-size: var(--h3); line-height: 1.25; font-weight: 700; margin: 0 0 var(
   background: var(--surface);
   font-size: 0.9rem;
 }
+/* show it's clickable */
+.portfolio-box { cursor: zoom-in; }
+
+/* tighten caption inside popup (optional) */
+.mfp-title { font-weight: 600; opacity: .9; }
 
 .project-category { font-size: .95rem; color: rgba(255,255,255,0.75); }
 .project-name { font-weight: 700; }
@@ -187,6 +207,33 @@ h3 { font-size: var(--h3); line-height: 1.25; font-weight: 700; margin: 0 0 var(
 .phone-number { color: var(--accent); font-weight: 700; }
 
 a:focus, button:focus, .btn:focus { outline: 2px solid var(--accent); outline-offset: 3px; }
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 24px;
+  justify-items: center;
+  align-items: center;
+  margin-top: 24px;
+}
+.tech-grid i {
+  font-size: 4rem;
+  line-height: 1;
+}
+.pill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+.pill {
+  padding: 6px 14px;
+  background: #0e1530;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
 
 .btn-primary {
   background: var(--primary); border-color: var(--primary);
@@ -195,8 +242,33 @@ a:focus, button:focus, .btn:focus { outline: 2px solid var(--accent); outline-of
 .btn-primary:hover { background: var(--primary-600); border-color: var(--primary-600); }
 
 /* ---- About ---- */
-.about-intro h2 { margin-bottom: 0; }
-.prose h3 { margin-top: 0; margin-bottom: 12px; }
+#about {
+  padding: 5rem 1.5rem;
+  text-align: center; /* forces all text inside to center */
+}
+#about .divider {
+  width: 60px;
+  height: 4px;
+  background: #0ea5e9;
+  border: none;
+  margin: 1rem auto 2rem;
+  border-radius: 9999px;
+}
+#about .story-text {
+  max-width: 700px;
+  margin: 0 auto;
+}
+#about .story-text p {
+  font-size: 1.125rem;
+  line-height: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+#about .story-text .highlight {
+  color: #38bdf8; /* cyan accent */
+  font-weight: 600;
+}
+
 
 /* Skills card */
 .skills-card { margin-top: var(--space-6); }

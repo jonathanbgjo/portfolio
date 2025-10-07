@@ -102,13 +102,18 @@ hero */
   margin:0 auto;
 }
 .hero-text {flex:1 1 420px; text-align:left;}
-.hero-photo {flex:1 1 340px; text-align:center;}
 .hero-photo img {
-  max-width:100%;
-  border-radius:16px;
-  box-shadow:0 12px 40px rgba(0,0,0,.45);
-  transition:transform .4s ease;
+  width: 100%;              /* full width of its container */
+  max-width: 480px;         /* increase from e.g. 340px or 400px */
+  border-radius: 16px;
+  box-shadow: 0 12px 40px rgba(0,0,0,.45);
+  transition: transform 0.3s ease;
 }
+.hero-photo {
+  flex: 1 1 480px;          /* lets it take more space */
+  text-align: center;
+}
+
 .hero-photo img:hover {transform:scale(1.03);}
 .accent {
   background: linear-gradient(90deg, #f97316, #facc15);

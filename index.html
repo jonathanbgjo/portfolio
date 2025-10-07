@@ -11,7 +11,8 @@
     />
   </head>
   <body id="page-top">
-    <div id="nav-placeholder"  ></div>
+    <div id="hero-placeholder"> </div>
+    <div id="nav-placeholder"></div>
     <!-- <header><h1>Hi! I'm Jonathan Jo</h1></header> -->
     <div id="about"></div>
     <div id="projects"></div>
@@ -28,6 +29,7 @@
     <script src="js/scripts.js"></script>
     <script>
       $(function () {
+        $("#hero-placeholder").load("hero.html");
         $("#nav-placeholder").load("nav.html");
         $("#about").load("about.html", function (res, status, xhr) {
           console.log("status:", status);

@@ -740,3 +740,41 @@ h3 { font-size: var(--h3); line-height: 1.25; font-weight: 700; margin: 0 0 var(
   box-shadow: 0 0 0 6px rgba(91,140,255,0.18);
   transform: translateY(-1px);
 }
+/* Ghost icon button (Foodle) */
+#current-project-section .icon-wrap {
+  display: inline-grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.18);
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease,
+    transform 0.15s ease;
+}
+
+/* Icon inside */
+#current-project-section .foodle-icon {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+/* Hover / focus */
+#current-project-section .icon-wrap:hover,
+#current-project-section .icon-wrap:focus-visible {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 6px rgba(91,140,255,0.18);
+  transform: translateY(-1px);
+}
+
+/* Optional: slightly brighten icon on hover */
+#current-project-section .icon-wrap:hover .foodle-icon {
+  filter: brightness(1.05);
+}

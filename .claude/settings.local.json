@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "Bash(start \"\" \"C:\\\\Users\\\\Jon\\\\.claude-worktrees\\\\portfolio\\\\brave-wiles\\\\index.html\")"
+      "Bash(start \"\" \"C:\\\\Users\\\\Jon\\\\.claude-worktrees\\\\portfolio\\\\brave-wiles\\\\index.html\")",
+      "Bash(find:*)"
     ]
   }
 }

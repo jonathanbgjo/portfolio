@@ -778,3 +778,46 @@ h3 { font-size: var(--h3); line-height: 1.25; font-weight: 700; margin: 0 0 var(
 #current-project-section .icon-wrap:hover .foodle-icon {
   filter: brightness(1.05);
 }
+
+/* =====================================
+   CONTACT SECTION
+   ===================================== */
+#contact-section {
+  padding: 4rem 1.5rem;
+  text-align: center;
+}
+#contact-section .divider {
+  width: 60px;
+  height: 4px;
+  background: #0ea5e9;
+  border: none;
+  margin: 1rem auto 2rem;
+  border-radius: 9999px;
+}
+
+.contact-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.contact-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-width: 160px;
+}
+.contact-item a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.contact-item .phone-number {
+  font-size: 1.05rem;
+  color: var(--text);
+  font-weight: 600;
+}

@@ -4,13 +4,11 @@
       <h2 class="section-title">Current Project</h2>
       <hr class="divider" />
 
-      <!-- Big YT icon w/ hover overlay -->
       <div class="project-card">
         <button class="icon-wrap" aria-label="Show technologies used">
-          <!-- YouTube SVG icon -->
           <img
             class="foodle-icon"
-            src="assets\img\foodle.png"
+            src="assets\img\yt.png"
             alt=""
             aria-hidden="true"
             draggable="false"
@@ -18,27 +16,24 @@
 
           <!-- Hover/focus overlay chips -->
           <ul class="tech-overlay" aria-hidden="true">
-            <li>NextJS</li>
-            <li>TypeScript</li>
-            <li>OpenAI</li>
+            <li>Java</li>
+            <li>Spring Boot</li>
+            <li>React</li>
             <li>PostgreSQL</li>
+            <li>AWS S3</li>
+            <li>OpenAI API</li>
           </ul>
         </button>
 
         <p class="project-desc">
-          “I’m developing <strong>Foodle!</strong> — an easy way to find and
-          extract recipes you find on social media when the recipes aren't so
-          clear!"
-        </p>
-        <p>
-          Full-stack AI web application built with Next.js (App Router) and
-          TypeScript, using serverless API routes, OpenAI structured outputs for
-          recipe extraction, Prisma ORM with PostgreSQL for persistence, and
-          deployed on Vercel.
+          <strong>Andromedia</strong> — a full-stack video-sharing platform
+          with S3 media storage, PostgreSQL persistence, and a Spring Boot
+          REST API. Integrated OpenAI for automatic video transcription and
+          summarization.
         </p>
 
         <a
-          href="https://foodle-delta.vercel.app/"
+          href="https://andromedia-2.vercel.app/"
           target="_blank"
           class="btn btn--ghost"
         >
@@ -51,7 +46,7 @@
   <h2>Portfolio</h2>
   <div class="container">
     <div class="projects-grid">
-      <!-- Project 1 -->
+      <!-- Sleeper -->
       <a class="portfolio-box card" href="https://sleeper-summary.vercel.app">
         <img
           class="img-fluid project"
@@ -68,23 +63,7 @@
         </div>
       </a>
 
-      <!-- Project 2 -->
-
-      <!-- Project 3 -->
-      <a class="portfolio-box card" href="https://andromedia-2.vercel.app/">
-        <img
-          class="img-fluid project"
-          src="assets\img\yt.png"
-          alt="Andromedia"
-        />
-        <div class="portfolio-box-caption">
-          <div class="project-category text-white-50">
-            Java, Spring Boot, React, PostgreSQL, AWS S3, OpenAI API
-          </div>
-          <div class="project-name">Andromedia (YouTube)</div>
-        </div>
-      </a>
-
+      <!-- NW Prime Properties -->
       <a
         class="portfolio-box card"
         href="https://github.com/jonathanbgjo/nw-prime-properties"
@@ -100,6 +79,25 @@
             HTML, CSS, JavaScript, Swiper, Formspree
           </div>
           <div class="project-name">NW Prime Properties</div>
+        </div>
+      </a>
+
+      <!-- Foodle -->
+      <a
+        class="portfolio-box card"
+        href="https://foodle-delta.vercel.app/"
+        target="_blank"
+      >
+        <img
+          class="img-fluid project"
+          src="assets\img\foodle.png"
+          alt="Foodle – AI Recipe Extraction"
+        />
+        <div class="portfolio-box-caption">
+          <div class="project-category text-white-50">
+            Next.js, TypeScript, OpenAI, PostgreSQL
+          </div>
+          <div class="project-name">Foodle (AI Recipe Extractor)</div>
         </div>
       </a>
     </div>

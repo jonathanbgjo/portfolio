@@ -2,7 +2,15 @@
   "permissions": {
     "allow": [
       "Bash(start \"\" \"C:\\\\Users\\\\Jon\\\\.claude-worktrees\\\\portfolio\\\\brave-wiles\\\\index.html\")",
-      "Bash(find:*)"
+      "Bash(find:*)",
+      "Bash(git log:*)",
+      "Bash(git merge:*)",
+      "Bash(git push:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nfeature Andromedia as current project, move Foodle to portfolio grid\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(gh pr create:*)",
+      "Bash(where:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nSimplify Andromedia hover overlay to 3 chips \\(Java, React, AWS\\)\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n\\)\")"
     ]
   }
 }

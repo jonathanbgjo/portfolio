@@ -332,48 +332,77 @@ h3 { font-size: var(--h3); line-height: 1.25; font-weight: 700; margin: 0 0 var(
 /* =====================================
    PROJECTS / PORTFOLIO
    ===================================== */
-.portfolio-grid, .projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 24px;
+.projects-list {
+  max-width: 1100px;
   margin: 0 auto;
-  max-width: 1200px;
   padding: 0 20px;
-}
-.portfolio-grid img, .projects-grid > .portfolio-box > a img {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: contain;
-  border-radius: var(--radius);
-  background: #1a2240;
-  padding: 1rem;
-}
-.portfolio-box.card {
   display: flex;
   flex-direction: column;
-  overflow: hidden;
-}
-.portfolio-box-caption {
-  padding: 8px 12px;
-  background: var(--surface);
-  font-size: 0.9rem;
-}
-.portfolio-box-caption .project-name {
-  font-size: 1.15rem;
-  font-weight: 700;
-}
-.portfolio-box-caption .project-detail {
-  margin: 0.4rem 0 0;
-  font-size: 0.8rem;
-  color: var(--muted);
-  line-height: 1.4;
+  gap: 3rem;
 }
 
-/* Swiper inside project cards */
+/* Each project: info left, slideshow right */
+.project-row {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  background: var(--surface);
+  border-radius: var(--radius);
+  overflow: hidden;
+  padding: 1.5rem;
+}
+.project-info {
+  flex: 1 1 300px;
+  min-width: 0;
+}
+.project-slideshow {
+  flex: 1 1 400px;
+  min-width: 0;
+}
+
+/* Project icon */
+.project-icon {
+  width: 80px;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  background: #1a2240;
+  padding: 0.4rem;
+}
+.project-info .project-name {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 0 0 0.4rem;
+}
+.project-info .project-category {
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-bottom: 0.8rem;
+}
+.project-info .project-detail {
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.55;
+  margin: 0;
+}
+.project-link {
+  display: inline-block;
+  margin-top: 0.8rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+/* Swiper in slideshow column */
 .triforge-swiper,
 .andromedia-swiper {
-  border-radius: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #0b1020;
 }
+.triforge-swiper { aspect-ratio: 9/16; }
+.andromedia-swiper { aspect-ratio: 16/9; }
+
 .triforge-swiper img,
 .andromedia-swiper img {
   width: 100%;
@@ -417,6 +446,16 @@ h3 { font-size: var(--h3); line-height: 1.25; font-weight: 700; margin: 0 0 var(
   background: rgba(11,16,32,.75);
   padding: 4px 12px;
   pointer-events: none;
+}
+
+/* Stack vertically on mobile */
+@media (max-width: 700px) {
+  .project-row {
+    flex-direction: column;
+  }
+  .project-slideshow {
+    width: 100%;
+  }
 }
 
 /* =====================================

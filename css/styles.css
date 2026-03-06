@@ -288,13 +288,22 @@ h3 { font-size: var(--h3); line-height: 1.25; font-weight: 700; margin: 0 0 var(
 /* =====================================
    TECHNOLOGIES
    ===================================== */
+.tech-category {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: var(--space-8);
+  margin-bottom: 0;
+}
 .tech-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: var(--space-6);
   justify-items: center;
   align-items: center;
-  margin-top: var(--space-8);
+  margin-top: var(--space-4);
 }
 .tech-grid i {
   font-size: 4rem;
@@ -334,8 +343,10 @@ h3 { font-size: var(--h3); line-height: 1.25; font-weight: 700; margin: 0 0 var(
 .portfolio-grid img, .projects-grid img {
   width: 100%;
   aspect-ratio: 16 / 9;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: var(--radius);
+  background: #1a2240;
+  padding: 1rem;
 }
 .portfolio-box.card {
   display: flex;
@@ -656,8 +667,8 @@ h3 { font-size: var(--h3); line-height: 1.25; font-weight: 700; margin: 0 0 var(
   position: relative;
   display: grid;
   place-items: center;
-  width: 180px;
-  height: 180px;
+  width: 80px;
+  height: auto;
   margin: 0 auto 1.25rem;
   border-radius: 9999px;
   border: 1px solid rgba(255,255,255,0.08);
@@ -750,7 +761,7 @@ h3 { font-size: var(--h3); line-height: 1.25; font-weight: 700; margin: 0 0 var(
 #current-project-section .icon-wrap {
   display: inline-grid;
   place-items: center;
-  width: 180px;
+  width: 80px;
   height: auto;
   border-radius: 12px;
   border: 1px solid rgba(255,255,255,0.18);

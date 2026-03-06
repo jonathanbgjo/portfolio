@@ -1,120 +1,57 @@
-<section class="page-section" id="projects-section">
-  <section id="current-project-section" class="page-section bg-primary">
-    <div class="container">
-      <h2 class="section-title">Current Project</h2>
-      <hr class="divider" />
+<section class=”page-section” id=”projects-section”>
+  <div class=”container”>
+    <h2 class=”section-title”>Projects</h2>
+    <hr class=”divider” />
 
-      <div class=”project-card”>
-        <button class=”icon-wrap” aria-label=”Show technologies used”>
-          <img
-            class=”foodle-icon”
-            src="assets\img\triforge.png"
-            alt=""
-            aria-hidden="true"
-            draggable="false"
-          />
-
-          <ul class=”tech-overlay” aria-hidden=”true”>
-            <li>Godot 4</li>
-            <li>PostgreSQL</li>
-            <li>AWS Lambda</li>
-            <li>Firebase</li>
-          </ul>
-        </button>
-
-        <p class=”project-desc”>
-          “I’m developing <strong>Triforge TD</strong> — a mobile-first 3D
-          tower defense game with merge-3 upgrading, hero abilities, and gacha
-          progression.”
-        </p>
-        <p>
-          Built with Godot 4 (GDScript) for 768&times;1280 portrait. Features
-          8 tower types with ~86 augments, 6 hero classes, 17 enemy types
-          across 63 campaign levels, world boss &amp; challenge modes, and a
-          full gacha economy. Backend uses PostgreSQL (Supabase), AWS Lambda +
-          API Gateway (Python) for server-authoritative gacha with pity system,
-          Firebase Auth, AdMob ads, Apple IAP + Google Play Billing + PayPal,
-          and an offline-first architecture with cloud sync. Includes CI/CD via
-          GitHub Actions, CDK infrastructure-as-code, and GDPR compliance.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <h2>Portfolio</h2>
-  <div class="container">
-    <div class="projects-grid">
-      <!-- Foodle -->
-      <a
-        class="portfolio-box card"
-        href="https://foodle-delta.vercel.app/"
-        target="_blank"
-      >
+    <div class=”projects-grid”>
+      <!-- Triforge TD -->
+      <div class=”portfolio-box card”>
         <img
-          class="img-fluid project"
-          src="assets/img/foodle.png"
-          alt="Foodle – AI Recipe Extraction"
+          class=”img-fluid project”
+          src=”assets/img/triforge.png”
+          alt=”Triforge TD – Mobile Tower Defense Game”
         />
-        <div class="portfolio-box-caption">
-          <div class="project-category text-white-50">
-            Next.js, TypeScript, OpenAI API, PostgreSQL, Prisma, Vercel
+        <div class=”portfolio-box-caption”>
+          <div class=”project-category text-white-50”>
+            Godot 4, GDScript, PostgreSQL, AWS Lambda, Firebase, AdMob
           </div>
-          <div class="project-name">Foodle (AI Recipe Extractor)</div>
-          <p class="project-detail">
-            Full-stack AI web app that extracts recipes from social media
-            links. Uses OpenAI structured outputs, serverless API routes,
-            and Prisma ORM with PostgreSQL for persistence.
+          <div class=”project-name”>Triforge TD</div>
+          <p class=”project-detail”>
+            Mobile-first 3D tower defense with merge-3 upgrading, 6 hero
+            classes, and gacha progression. 8 tower types with ~86 augments,
+            17 enemy types across 63 campaign levels, world boss &amp;
+            challenge modes. Server-authoritative gacha via AWS Lambda +
+            Supabase, Firebase Auth, Apple IAP + Google Play Billing,
+            offline-first architecture, and full CI/CD with CDK
+            infrastructure-as-code.
           </p>
         </div>
-      </a>
+      </div>
 
       <!-- Andromedia -->
-      <a
-        class="portfolio-box card"
-        href="https://andromedia-2.vercel.app/"
-        target="_blank"
-      >
-        <img
-          class="img-fluid project"
-          src="assets/img/yt.png"
-          alt="Andromedia – YouTube Platform"
-        />
-        <div class="portfolio-box-caption">
-          <div class="project-category text-white-50">
+      <div class=”portfolio-box card”>
+        <a href=”https://andromedia-2.vercel.app/” target=”_blank”>
+          <img
+            class=”img-fluid project”
+            src=”assets/img/yt.png”
+            alt=”Andromedia – YouTube Platform”
+          />
+        </a>
+        <div class=”portfolio-box-caption”>
+          <div class=”project-category text-white-50”>
             Java, Spring Boot, React, PostgreSQL, AWS S3, OpenAI API
           </div>
-          <div class="project-name">Andromedia (YouTube)</div>
-          <p class="project-detail">
-            Full-stack video platform with Spring Boot REST API, React
-            frontend, PostgreSQL database, AWS S3 for media storage,
-            and OpenAI-powered content recommendations.
+          <div class=”project-name”>Andromedia (YouTube Clone)</div>
+          <p class=”project-detail”>
+            Full-stack video sharing platform modeled after YouTube. Java
+            Spring Boot REST API with React frontend, PostgreSQL for
+            relational data, AWS S3 for video/thumbnail storage, and
+            OpenAI-powered content recommendations. Features user auth,
+            video upload &amp; transcoding, search, comments, likes, and
+            subscription feeds.
           </p>
         </div>
-      </a>
-
-      <!-- NW Prime Properties -->
-      <a
-        class="portfolio-box card"
-        href="https://github.com/jonathanbgjo/nw-prime-properties"
-        target="_blank"
-      >
-        <img
-          class="img-fluid project"
-          src="assets/img/nwprimeproperties.jpg"
-          alt="NW Prime Properties – Commercial Real Estate"
-        />
-        <div class="portfolio-box-caption">
-          <div class="project-category text-white-50">
-            HTML, CSS, JavaScript, Swiper, Formspree
-          </div>
-          <div class="project-name">NW Prime Properties</div>
-          <p class="project-detail">
-            Commercial real estate website with responsive design,
-            interactive property galleries using Swiper, and
-            Formspree-powered contact forms.
-          </p>
-        </div>
-      </a>
+      </div>
     </div>
   </div>
 </section>

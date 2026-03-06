@@ -9,6 +9,10 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
   </head>
   <body id="page-top">
     <div id="hero-placeholder"></div>
@@ -27,6 +31,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
     <!-- Core theme JS-->
     <script src="js/scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
       $(function () {
         $(".portfolio-grid").magnificPopup({
@@ -207,7 +212,23 @@
         });
 
         $("#about").load("about.html");
-        $("#projects").load("projects.html");
+        $("#projects").load("projects.html", function () {
+          var swiperOpts = {
+            loop: true,
+            spaceBetween: 10,
+            slidesPerView: 1,
+            navigation: { nextEl: ".triforge-next", prevEl: ".triforge-prev" },
+            pagination: { el: ".triforge-pagination", clickable: true },
+          };
+          new Swiper(".triforge-swiper", swiperOpts);
+          new Swiper(".andromedia-swiper", {
+            loop: true,
+            spaceBetween: 10,
+            slidesPerView: 1,
+            navigation: { nextEl: ".andromedia-next", prevEl: ".andromedia-prev" },
+            pagination: { el: ".andromedia-pagination", clickable: true },
+          });
+        });
         $("#technologies").load("technologies.html");
         $("#portfolio").load("portfolio.html");
         $("#contact").load("contact.html");

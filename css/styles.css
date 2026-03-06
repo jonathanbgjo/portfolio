@@ -340,7 +340,7 @@ h3 { font-size: var(--h3); line-height: 1.25; font-weight: 700; margin: 0 0 var(
   max-width: 1200px;
   padding: 0 20px;
 }
-.portfolio-grid img, .projects-grid img {
+.portfolio-grid img, .projects-grid > .portfolio-box > a img {
   width: 100%;
   aspect-ratio: 16 / 9;
   object-fit: contain;
@@ -358,11 +358,65 @@ h3 { font-size: var(--h3); line-height: 1.25; font-weight: 700; margin: 0 0 var(
   background: var(--surface);
   font-size: 0.9rem;
 }
+.portfolio-box-caption .project-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+}
 .portfolio-box-caption .project-detail {
   margin: 0.4rem 0 0;
   font-size: 0.8rem;
   color: var(--muted);
   line-height: 1.4;
+}
+
+/* Swiper inside project cards */
+.triforge-swiper,
+.andromedia-swiper {
+  border-radius: 0;
+}
+.triforge-swiper img,
+.andromedia-swiper img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 0;
+  padding: 0;
+  background: #0b1020;
+}
+.triforge-swiper .swiper-button-prev,
+.triforge-swiper .swiper-button-next,
+.andromedia-swiper .swiper-button-prev,
+.andromedia-swiper .swiper-button-next {
+  color: var(--primary);
+  --swiper-navigation-size: 28px;
+}
+.triforge-swiper .swiper-pagination-bullet,
+.andromedia-swiper .swiper-pagination-bullet {
+  background: var(--muted);
+  opacity: .5;
+}
+.triforge-swiper .swiper-pagination-bullet-active,
+.andromedia-swiper .swiper-pagination-bullet-active {
+  background: var(--primary);
+  opacity: 1;
+}
+
+/* Slide captions */
+.swiper-slide {
+  position: relative;
+}
+.slide-caption {
+  position: absolute;
+  bottom: 28px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #e5e9f0;
+  background: rgba(11,16,32,.75);
+  padding: 4px 12px;
+  pointer-events: none;
 }
 
 /* =====================================

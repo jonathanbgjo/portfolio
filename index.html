@@ -32,6 +32,28 @@
     <!-- Core theme JS-->
     <script src="js/scripts.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script type="module">
+      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+      mermaid.initialize({
+        startOnLoad: false,
+        theme: 'dark',
+        themeVariables: {
+          darkMode: true,
+          background: '#0f172a',
+          primaryColor: '#1e3a5f',
+          primaryTextColor: '#e5e9f0',
+          primaryBorderColor: '#5b8cff',
+          lineColor: '#5b8cff',
+          secondaryColor: '#1a2240',
+          tertiaryColor: '#12192f',
+          fontFamily: '"Merriweather Sans", system-ui, sans-serif',
+          fontSize: '12px',
+        },
+      });
+      window.renderMermaid = function() {
+        mermaid.run({ nodes: document.querySelectorAll('.mermaid') });
+      };
+    </script>
     <script>
       $(function () {
         $(".portfolio-grid").magnificPopup({
@@ -228,6 +250,7 @@
             navigation: { nextEl: ".andromedia-next", prevEl: ".andromedia-prev" },
             pagination: { el: ".andromedia-pagination", clickable: true },
           });
+          if (window.renderMermaid) window.renderMermaid();
         });
         $("#technologies").load("technologies.html");
         $("#portfolio").load("portfolio.html");

@@ -20,6 +20,68 @@
             offline-first architecture, and full CI/CD with CDK
             infrastructure-as-code.
           </p>
+
+          <h4 class="diagram-title">System Architecture</h4>
+          <div class="diagram-wrap" onclick="openDiagram(this)">
+            <span class="diagram-hint">Click to enlarge</span>
+            <pre class="mermaid">
+graph TB
+    subgraph Core["Core Game Loop"]
+        GM[GameManager]
+        WM[WaveManager]
+        Grid[GridManager]
+    end
+
+    subgraph Combat["Combat Systems"]
+        TB[TowerBase - 8 Types]
+        EB[EnemyBase - 17 Types]
+        HT[HeroTower - 6 Heroes]
+    end
+
+    subgraph Progression["Progression Layer"]
+        PM[ProgressionManager]
+        ST[Skill Trees]
+        Equip[Equipment - 11-14 Slots]
+        Gacha[Gacha System]
+    end
+
+    subgraph Content["Content Data"]
+        AD[AugmentData - 86 Augments]
+        CD[CampaignData - 63 x 5 Levels]
+    end
+
+    GM --> WM
+    GM --> Grid
+    GM --> TB
+    GM --> HT
+    WM --> EB
+    TB --> EB
+    PM --> GM
+    PM --> HT
+    ST --> PM
+    Equip --> PM
+    Gacha --> PM
+    AD --> TB
+    CD --> GM
+            </pre>
+          </div>
+
+          <h4 class="diagram-title">Damage Pipeline</h4>
+          <div class="diagram-wrap" onclick="openDiagram(this)">
+            <span class="diagram-hint">Click to enlarge</span>
+            <pre class="mermaid">
+flowchart LR
+    A[Base Damage] --> B[Rarity x1.0-1.6]
+    B --> C[Level Bonus]
+    C --> D[Tier Scaling]
+    D --> E[Skill Tree]
+    E --> F[Augment Mods]
+    F --> G{On Hit}
+    G --> I[Damage]
+    G --> J[Procs]
+    G --> K[Debuffs]
+            </pre>
+          </div>
         </div>
         <div class="project-slideshow">
           <div class="swiper triforge-swiper">
@@ -86,4 +148,41 @@
 
     </div>
   </div>
+
+  <!-- Diagram lightbox -->
+  <div class="diagram-lightbox" id="diagram-lightbox" onclick="closeDiagram(event)">
+    <button class="diagram-lightbox-close" onclick="closeDiagram(event)">&times;</button>
+    <div class="diagram-lightbox-content" id="diagram-lightbox-content"></div>
+  </div>
 </section>
+
+<script>
+function openDiagram(el) {
+  var svg = el.querySelector('svg');
+  if (!svg) return;
+  var content = document.getElementById('diagram-lightbox-content');
+  content.innerHTML = svg.outerHTML;
+  // Scale up the SVG in the lightbox
+  var bigSvg = content.querySelector('svg');
+  if (bigSvg) {
+    bigSvg.style.width = '100%';
+    bigSvg.style.height = 'auto';
+    bigSvg.style.maxHeight = '80vh';
+  }
+  document.getElementById('diagram-lightbox').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeDiagram(e) {
+  if (e.target === document.getElementById('diagram-lightbox') ||
+      e.target.classList.contains('diagram-lightbox-close')) {
+    document.getElementById('diagram-lightbox').classList.remove('active');
+    document.body.style.overflow = '';
+  }
+}
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    document.getElementById('diagram-lightbox').classList.remove('active');
+    document.body.style.overflow = '';
+  }
+});
+</script>

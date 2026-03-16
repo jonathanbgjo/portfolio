@@ -399,6 +399,57 @@ h3 { font-size: var(--h3); line-height: 1.25; font-weight: 700; margin: 0 0 var(
   font-weight: 600;
   color: var(--primary);
 }
+.project-status {
+  display: inline-block;
+  margin-top: 0.7rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #34d399;
+  background: rgba(52,211,153,.1);
+  border: 1px solid rgba(52,211,153,.25);
+  border-radius: 999px;
+  padding: 0.3rem 0.8rem;
+}
+.project-demo-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.8rem;
+  padding: 0.55rem 1.1rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #0b1220;
+  background: #f9fafb;
+  border-radius: 10px;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.project-demo-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  text-decoration: none;
+  color: #0b1220;
+}
+
+/* CTA after projects */
+.projects-cta {
+  text-align: center;
+  margin-top: 3rem;
+  padding: 2rem 0 0;
+}
+.projects-cta p {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0 0 1rem;
+}
+.projects-cta-actions {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
 
 /* Mermaid diagrams in project info */
 .diagram-title {

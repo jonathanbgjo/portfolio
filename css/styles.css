@@ -302,6 +302,7 @@ h3 { font-size: var(--h3); line-height: 1.25; font-weight: 700; margin: 0 0 var(
   color: var(--muted);
   margin: -0.2rem 0 0.6rem;
   opacity: 0.8;
+  text-align: center;
 }
 .tech-grid {
   display: grid;

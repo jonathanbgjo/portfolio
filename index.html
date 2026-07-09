@@ -252,6 +252,13 @@
             pagination: { el: ".triforge-pagination", clickable: true },
           };
           new Swiper(".triforge-swiper", swiperOpts);
+          new Swiper(".catfeeder-swiper", {
+            loop: true,
+            spaceBetween: 10,
+            slidesPerView: 1,
+            navigation: { nextEl: ".catfeeder-next", prevEl: ".catfeeder-prev" },
+            pagination: { el: ".catfeeder-pagination", clickable: true },
+          });
           new Swiper(".andromedia-swiper", {
             loop: true,
             spaceBetween: 10,

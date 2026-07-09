@@ -111,6 +111,86 @@ flowchart LR
         </div>
       </div>
 
+      <!-- Cat Feeding Tracker -->
+      <div class="project-row">
+        <div class="project-info">
+          <img src="assets/img/cat-feeder/icon.svg" alt="Cat Feeding Tracker" class="project-icon" />
+          <h3 class="project-name">Cat Feeding Tracker</h3>
+          <div class="project-category">ESP32, Next.js, Vercel, Supabase (Postgres), Google Apps Script</div>
+          <p class="project-detail">
+            An IoT tracker for when the cats were last fed. Press a physical
+            button in the kitchen and it&rsquo;s logged &mdash; viewable from
+            anywhere. An ESP32 POSTs each press to a Next.js API on Vercel,
+            which inserts a row into Supabase. The device&rsquo;s OLED reads
+            back a Postgres RPC, <em>feeding_summary()</em>, that handles the
+            Eastern-midnight reset and collapses presses within 2 minutes into
+            a single feeding &mdash; showing <em>Fed 3h 12m ago / Today: 2
+            times</em>. A Supabase webhook mirrors every insert to a Google
+            Sheet as a live backup. All timezone and de-dupe logic lives in
+            Postgres, and the device stores nothing: unplug it and it just
+            re-reads from the API. Next up: Litter-Robot (Whisker API) weight
+            data to flag weekly changes, plus food-inventory restock tracking.
+          </p>
+          <span class="project-status">Live &middot; running in the kitchen</span>
+
+          <h4 class="diagram-title">System Architecture</h4>
+          <div class="diagram-wrap" onclick="openDiagram(this)">
+            <span class="diagram-hint">Click to enlarge</span>
+            <pre class="mermaid">
+graph TB
+    subgraph Device["Kitchen Device — ESP32"]
+        Btn[Raw / Wet Buttons]
+        OLED[OLED Display]
+    end
+
+    subgraph Cloud["Vercel — Next.js"]
+        Feed["/api/feedings"]
+        Sum["/api/summary"]
+        Web[History Webpage]
+    end
+
+    subgraph Data["Supabase — Postgres"]
+        Tbl[(feedings table)]
+        RPC["feeding_summary RPC"]
+    end
+
+    Btn -->|POST| Feed
+    Feed -->|INSERT| Tbl
+    OLED -->|GET| Sum
+    Sum --> RPC
+    RPC --> Tbl
+    Web -->|GET| Feed
+    Tbl -.webhook.-> GAS[Google Apps Script]
+    GAS --> Sheet[(Google Sheet · Mirror)]
+            </pre>
+          </div>
+
+          <h4 class="diagram-title">Summary Logic (server-side)</h4>
+          <div class="diagram-wrap" onclick="openDiagram(this)">
+            <span class="diagram-hint">Click to enlarge</span>
+            <pre class="mermaid">
+flowchart LR
+    A[Button presses] --> B[Collapse presses within 2 min]
+    B --> C[Reset at Eastern midnight]
+    C --> D[Count = feedings today]
+    D --> E[Fed 3h ago · Today: 2]
+            </pre>
+          </div>
+        </div>
+        <div class="project-slideshow">
+          <div class="swiper catfeeder-swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide"><img src="assets/img/cat-feeder/cat-01.jpg" alt="Kitchen device" /><span class="slide-caption">Kitchen device &mdash; ESP32, OLED, raw/wet buttons</span></div>
+              <div class="swiper-slide"><img src="assets/img/cat-feeder/cat-02.png" alt="History webpage" /><span class="slide-caption">Webpage &mdash; last fed &amp; feeding history</span></div>
+              <div class="swiper-slide"><img src="assets/img/cat-feeder/cat-03.png" alt="Google Sheet backup" /><span class="slide-caption">Google Sheet &mdash; live backup mirror</span></div>
+            </div>
+            <div class="swiper-button-prev catfeeder-prev"></div>
+            <div class="swiper-button-next catfeeder-next"></div>
+            <div class="swiper-pagination catfeeder-pagination"></div>
+          </div>
+        </div>
+      </div>
+
       <!-- Andromedia -->
       <div class="project-row">
         <div class="project-info">

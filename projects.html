@@ -128,10 +128,15 @@ flowchart LR
             times</em>. A Supabase webhook mirrors every insert to a Google
             Sheet as a live backup. All timezone and de-dupe logic lives in
             Postgres, and the device stores nothing: unplug it and it just
-            re-reads from the API. Next up: Litter-Robot (Whisker API) weight
-            data to flag weekly changes, plus food-inventory restock tracking.
+            re-reads from the API. The webpage also syncs each cat&rsquo;s
+            weight from a Litter-Robot via the Whisker API to flag weekly
+            changes; food-inventory restock tracking is next.
           </p>
           <span class="project-status">Live &middot; running in the kitchen</span>
+          <a href="https://catfeeder.jonathanbgjo.com/" target="_blank" class="project-demo-btn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Live Demo
+          </a>
 
           <h4 class="diagram-title">System Architecture</h4>
           <div class="diagram-wrap" onclick="openDiagram(this)">
@@ -181,8 +186,10 @@ flowchart LR
           <div class="swiper catfeeder-swiper">
             <div class="swiper-wrapper">
               <div class="swiper-slide"><img src="assets/img/cat-feeder/cat-01.jpg" alt="Kitchen device" /><span class="slide-caption">Kitchen device &mdash; ESP32, OLED, raw/wet buttons</span></div>
-              <div class="swiper-slide"><img src="assets/img/cat-feeder/cat-02.png" alt="History webpage" /><span class="slide-caption">Webpage &mdash; last fed &amp; feeding history</span></div>
-              <div class="swiper-slide"><img src="assets/img/cat-feeder/cat-03.png" alt="Google Sheet backup" /><span class="slide-caption">Google Sheet &mdash; live backup mirror</span></div>
+              <div class="swiper-slide"><img src="assets/img/cat-feeder/cat-02.png" alt="Webpage dashboard" /><span class="slide-caption">Dashboard &mdash; last fed &amp; today&rsquo;s count</span></div>
+              <div class="swiper-slide"><img src="assets/img/cat-feeder/cat-03.png" alt="Feeding history" /><span class="slide-caption">History &mdash; grouped by day with per-day counts</span></div>
+              <div class="swiper-slide"><img src="assets/img/cat-feeder/cat-04.png" alt="Cat weights" /><span class="slide-caption">Weights &mdash; synced from Litter-Robot (Whisker API)</span></div>
+              <div class="swiper-slide"><img src="assets/img/cat-feeder/cat-05.png" alt="Google Sheet backup" /><span class="slide-caption">Google Sheet &mdash; live backup mirror</span></div>
             </div>
             <div class="swiper-button-prev catfeeder-prev"></div>
             <div class="swiper-button-next catfeeder-next"></div>
@@ -205,7 +212,7 @@ flowchart LR
             video upload &amp; transcoding, search, comments, likes, and
             subscription feeds.
           </p>
-          <a href="https://andromedia-2.vercel.app/" target="_blank" class="project-demo-btn">
+          <a href="https://andromedia.jonathanbgjo.com/" target="_blank" class="project-demo-btn">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             Live Demo
           </a>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Choose one goal, show up each day, and see a whole year of progress take shape." />
+    <meta name="theme-color" content="#f4f0e8" />
+    <title>Day by Day — Daily Goal Calendar</title>
+    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="css/goal-calendar.css" />
+    <script src="js/goal-calendar.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="wordmark" href="goal-calendar.html" aria-label="Day by Day home">DAY BY DAY<span>®</span></a>
+      <a class="back-link" href="index.html#projects-section">Back to portfolio <span aria-hidden="true">↗</span></a>
+    </header>
+
+    <main class="page-shell">
+      <section class="intro" aria-labelledby="page-title">
+        <p class="eyebrow">A little progress, every day</p>
+        <h1 id="page-title">Make this year <em>count.</em></h1>
+        <p class="intro-copy">Pick one thing that matters. Mark the days you show up. Watch the small wins add up.</p>
+      </section>
+
+      <section class="goal-panel" aria-label="Your annual goal">
+        <form id="goal-form">
+          <label for="goal-input">MY GOAL THIS YEAR</label>
+          <div class="goal-input-row">
+            <input id="goal-input" name="goal" type="text" maxlength="80" placeholder="What do you want to show up for?" autocomplete="off" />
+            <button class="save-goal" type="submit">Save goal</button>
+          </div>
+        </form>
+        <p class="goal-hint">One goal. A fresh chance every day.</p>
+      </section>
+
+      <section class="calendar-section" aria-labelledby="calendar-heading">
+        <div class="calendar-heading-row">
+          <div>
+            <p class="eyebrow">Your year at a glance</p>
+            <h2 id="calendar-heading"><span id="goal-label">Every day counts</span></h2>
+          </div>
+          <div class="year-controls" aria-label="Choose calendar year">
+            <button id="previous-year" class="year-button" type="button" aria-label="Previous year">←</button>
+            <span id="calendar-year" aria-live="polite"></span>
+            <button id="next-year" class="year-button" type="button" aria-label="Next year">→</button>
+          </div>
+        </div>
+
+        <div class="board-frame">
+          <div class="calendar-board">
+            <div class="month-labels" id="month-labels" aria-hidden="true"></div>
+            <div class="day-grid" id="day-grid" aria-label="Daily goal calendar"></div>
+            <div class="board-footer">
+              <span class="board-note">ONE DAY AT A TIME</span>
+              <span class="board-legend"><span class="legend-mark" aria-hidden="true"></span> Goal completed</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="calendar-help">Tap a date to mark the day you showed up. Tap it again to undo.</p>
+      </section>
+
+      <section class="progress-section" aria-label="Yearly progress">
+        <article class="progress-card">
+          <span class="progress-label">DAYS COMPLETED</span>
+          <strong id="completed-count">0</strong>
+          <span class="progress-detail">of <span id="days-in-year">365</span> days</span>
+        </article>
+        <article class="progress-card">
+          <span class="progress-label">CURRENT STREAK</span>
+          <strong><span id="current-streak">0</span><small> days</small></strong>
+          <span class="progress-detail">keep the rhythm going</span>
+        </article>
+        <article class="progress-card progress-card--wide">
+          <div class="completion-copy">
+            <span class="progress-label">YEAR IN PROGRESS</span>
+            <strong id="completion-rate">0%</strong>
+          </div>
+          <div class="progress-track" role="progressbar" aria-label="Days completed this year" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progress-track">
+            <span id="progress-fill"></span>
+          </div>
+          <span class="progress-detail">Every mark is proof you were here.</span>
+        </article>
+      </section>
+
+      <p id="status-message" class="status-message" role="status" aria-live="polite"></p>
+    </main>
+
+    <footer class="site-footer">
+      <span>DAY BY DAY</span>
+      <span>Built by <a href="index.html">Jonathan Jo</a></span>
+    </footer>
+  </body>
+</html>
